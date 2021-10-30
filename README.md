@@ -1,24 +1,16 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Task Manager
 
-Things you may want to cover:
+- TM is a Sample CRUD application for managing tasks
+- User can create task and assign to another user
 
-* Ruby version
+# Technologies Used
+**Backend**
 
-* System dependencies
+- Rails6
+- Ruby 2.7.3
+- PostgreSQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Front end** 
+- React
+- Bootstrap5
