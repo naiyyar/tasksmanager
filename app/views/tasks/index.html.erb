@@ -1,0 +1,9 @@
+<%= react_component(
+    "home/Index", 
+    {
+      pending: @tasks[:pending],
+      started: @tasks[:started],
+      completed: @tasks[:completed]
+    }
+  ) 
+%>

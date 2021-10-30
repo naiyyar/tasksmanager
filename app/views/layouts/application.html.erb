@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskManager</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= react_component("shared/Header") %>
+      <div class="container-fluid pt-5 ps-4 pe-4">
+        <%= yield %>
+      </div>
+    <%else%>
+      <div class="bg-image">
+        <%= yield %>
+      </div>
+    <%end%>
+  </body>
+</html>
