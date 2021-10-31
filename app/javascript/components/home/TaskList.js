@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import TaskActions from "../tasks/TaskActions"
 
 const TaskList = (props) => {
 	var tasks = props.tasks.map((task) => {
