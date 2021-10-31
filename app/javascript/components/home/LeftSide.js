@@ -12,6 +12,8 @@ class LeftSide extends React.Component {
     };
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.addNewTask = this.addNewTask.bind(this)
+		this.handleDelete = this.handleDelete.bind(this)
+		this.deleteTask = this.deleteTask.bind(this)
 	}
   
 	handleSubmit(title){
@@ -36,12 +38,31 @@ class LeftSide extends React.Component {
 		})
 	}
 
+	handleDelete(id){
+		fetch(`http://localhost:3000/tasks/${id}`, {
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		}).then((response) => {
+			this.deleteTask(id)
+			alert('task deleted')
+		});
+	}
+
+	deleteTask(id){
+    let newTasks = this.state.tasks.filter((task) => task.id !== id)
+    this.setState({
+      tasks: newTasks
+    })
+  }
+
   render () {
     return (
       <React.Fragment>
       	<div className="col-lg-4">
       		<NewTask handleSubmit = {this.handleSubmit}/>
-			    <TaskList tasks={this.state.tasks} />
+			    <TaskList tasks={this.state.tasks} handleDelete={this.handleDelete}/>
       	</div>
       </React.Fragment>
     );

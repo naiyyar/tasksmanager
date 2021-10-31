@@ -1,16 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import TaskActions from "../tasks/TaskActions"
+import Task from "../tasks/Task"
 
 const TaskList = (props) => {
 	var tasks = props.tasks.map((task) => {
   	return (
   		<div key={task.id}>
-  			<li className="list-group-item">
-  				<input className="form-check-input me-2" type="checkbox" value="" />
-  				{task.title}
-  				<span className="pull-right">...</span>
-  			</li>
+  			<Task task={task} handleDelete = {props.handleDelete} />
   		</div>
   	)
   });
