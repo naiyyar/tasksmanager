@@ -7,7 +7,7 @@ class RightSide extends React.Component {
     return (
       <React.Fragment>
       	<div className="col-lg-4">
-      		<h2 className="pb-4">Completed</h2>
+      		<h2 className="p-3 shadow bg-success text-white rounded">Completed ({this.props.tasks.length})</h2>
       		<TaskList tasks={this.props.tasks} />
       	</div>
       	
